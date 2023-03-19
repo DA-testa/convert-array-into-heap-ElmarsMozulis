@@ -28,20 +28,26 @@ def build_heap(data):
 
 
 def main():
-    insert = input()
-    if "I" in insert:
-        n = int(input())
-        data = list(map(int, input().split()))
-        assert len(data) == n
 
-    if "F" in insert:
-        insert = "tests/" + insert
-        with open(insert, 'r', encoding='utf-8') as file:
-            n = int(file.readline().strip())
-            data = list(map(int, file.readline().strip().split()))
-            assert len(data) == n
+    ievade = input()
 
-    swaps = build_heap(data)
+    if "I" in ievade: 
+        n = int(input()) 
+    if "I" in ievade: 
+        n = int(input()) 
+        data = list(map(int, input().split())) 
+        assert len(data) == n 
+
+    if "F" in ievade: 
+        ievade = "tests/" + input() 
+    if "F" in ievade: 
+        ievade = "tests/" + input() 
+        with open(ievade, 'r') as file: 
+            n = int(file.readline().strip())  
+            data = list(map(int, file.readline().strip().split())) 
+            
+            assert len(data) == n 
+    swaps = build_heap(data) 
 
     print(len(swaps))
     for i, j in swaps:
