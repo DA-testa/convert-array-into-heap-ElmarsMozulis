@@ -35,12 +35,12 @@ def main():
         assert len(data) == n
 
     if "F" in insert:
-        insert = "tests/" + insert()
+        insert = "tests/" + insert
         with open(insert, 'r', encoding='utf-8') as file:
             n = int(file.readline().strip())
             data = list(map(int, file.readline().strip().split()))
-            assert len(data) == n    
-    
+            assert len(data) == n
+
     swaps = build_heap(data)
 
     print(len(swaps))
