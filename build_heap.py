@@ -36,7 +36,7 @@ def main():
 
     if "F" in insert:
         insert = "tests/" + insert
-        with open(insert, 'r') as file:
+        with open(insert, 'r', encoding='utf-8') as file:
             n = int(file.readline().strip())
             data = list(map(int, file.readline().strip().split()))
             assert len(data) == n    
