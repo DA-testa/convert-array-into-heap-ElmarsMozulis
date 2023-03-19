@@ -22,40 +22,30 @@ def build_heap(data):
     swaps = []
     n = len(data)
 
-    # TODO: Creat heap and heap sort
-    # try to achieve  O(n) and not O(n2)
-
     for i in range(n//2,-1,-1):
         heapify(data,n,i,swaps)
     return swaps
 
 
 def main():
+    insert = input()
+    if "I" in insert:
+        n = int(input())
+        data = list(map(int, input().split()))
+        assert len(data) == n
+
+    if "F" in insert:
+        insert = "tests/" + insert()
+        with open(insert, 'r') as file:
+            n = int(file.readline().strip())
+            data = list(map(int, file.readline().strip().split()))
+            assert len(data) == n    
+ 
     
-    # TODO : add input and corresponding checks
-    # add another input for I or F 
-    # first two tests are from keyboard, third test is from a file
-
-
-    # input from file
-    filename = int(input("Enter filename: "))
-    with open(filename) as f:
-        n = int(f.readline())
-        data = list(map(int, f.readline().split()))
-    
-
-    # checks if lenght of data is the same as the said lenght
-    #assert len(data) == n
-
-    # calls function to assess the data 
-    # and give back all swaps
     swaps = build_heap(data)
 
-    # TODO: output how many swaps were made, 
-    # this number should be less than 4n (less than 4*len(data))
 
 
-    # output all swaps
     print(len(swaps))
     for swap in swaps:
         print(swap[0], swap[1])
