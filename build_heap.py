@@ -28,14 +28,14 @@ def build_heap(data):
 
 
 def main():
-    insert = input().strip()
+    insert = input()
     if "I" in insert:
         n = int(input())
         data = list(map(int, input().split()))
         assert len(data) == n
 
     if "F" in insert:
-        insert = "tests/" + insert
+        insert = "tests/" + insert()
         with open(insert, 'r', encoding='utf-8') as file:
             n = int(file.readline().strip())
             data = list(map(int, file.readline().strip().split()))
